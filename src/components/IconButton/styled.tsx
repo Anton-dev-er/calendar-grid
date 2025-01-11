@@ -16,8 +16,7 @@ export const IconButton = styled.button`
   }
 `;
 
-export const Icon = styled.span<{ $link: string }>`
-  background-image: url('../../../src/assets/${({ $link }) => $link}');
+export const Icon = styled.img`
   display: block;
   height: 100%;
   width: 100%;

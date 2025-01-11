@@ -65,11 +65,11 @@ const CalendarHeader = () => {
         </Button>
       </div>
       <div>
-        <IconButton icon="arrow-left.svg" onClick={handlePrevMonth} />
+        <IconButton icon="arrow-left" onClick={handlePrevMonth} />
         <Typography>
           {mappedFullNameMonth[selectedMonth.month]} {selectedMonth.year}
         </Typography>
-        <IconButton icon="arrow-right.svg" onClick={handleNextMonth} />
+        <IconButton icon="arrow-right" onClick={handleNextMonth} />
       </div>
       <div>
         <Input id="search-task" onChange={setSearch} placeholder="Search task ..." />

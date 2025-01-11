@@ -42,7 +42,6 @@ export const TaskContextProvider: FC<{ children: ReactNode }> = ({ children }) =
 
   useEffect(() => {
     filterTasks(search);
-    console.log(tasksGroups);
   }, [tasksGroups, search]);
 
   const colors: Color[] = [

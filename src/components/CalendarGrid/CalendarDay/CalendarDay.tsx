@@ -46,7 +46,7 @@ const CalendarDay: FC<Props> = ({ day, month, year, disabled = false }) => {
     >
       {selected && (
         <S.AddTask>
-          <IconButton onClick={handleAddTask} icon="plus.svg" />
+          <IconButton onClick={handleAddTask} icon="plus" />
         </S.AddTask>
       )}
       <TaskAnchor active={!todayPublicHolidays.length}>

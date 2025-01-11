@@ -84,11 +84,11 @@ const Task: FC<Props> = ({ task }) => {
           <S.Actions>
             {editable ? (
               <>
-                <IconButton onClick={handleEditTask} icon="check.svg" />
-                <IconButton onClick={handleRemoveTask} icon="trash.svg" />
+                <IconButton onClick={handleEditTask} icon="check" />
+                <IconButton onClick={handleRemoveTask} icon="trash" />
               </>
             ) : (
-              <IconButton onClick={handleSetEditable} icon="edit.svg" />
+              <IconButton onClick={handleSetEditable} icon="edit" />
             )}
           </S.Actions>
         </S.Task>
