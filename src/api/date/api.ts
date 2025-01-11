@@ -1,6 +1,6 @@
 import { useGetAvailableCountries, useGetPublicHolidays } from './requests';
 
-export const useDateApi = (year: number) => {
+export const useDateApi = () => {
   const {
     getAvailableCountries,
     isLoading: getAvailableCountriesLoading,
@@ -11,7 +11,7 @@ export const useDateApi = (year: number) => {
     getPublicHolidays,
     isLoading: getPublicHolidaysLoading,
     data: getPublicHolidaysData,
-  } = useGetPublicHolidays(year, 'UA');
+  } = useGetPublicHolidays();
 
   return {
     getAvailableCountries: {

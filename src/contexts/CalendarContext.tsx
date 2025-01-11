@@ -37,7 +37,7 @@ export const CalendarContextProvider: FC<{ children: ReactNode }> = ({ children 
   const [selectedWeek, setSelectedWeek] = useState<number | null>(null);
   const {
     getPublicHolidays: { getPublicHolidays, data: publicHolidays },
-  } = useDateApi(selectedMonth.year || 2025);
+  } = useDateApi();
 
   const setNewMonth = (month: number, year: number) => {
     setSelectedMonth({
@@ -48,11 +48,12 @@ export const CalendarContextProvider: FC<{ children: ReactNode }> = ({ children 
 
   useEffect(() => {
     const currentDate = getCurrentDate();
-
     setNewMonth(currentDate.month, currentDate.year);
-
-    void getPublicHolidays();
   }, []);
+
+  useEffect(() => {
+    void getPublicHolidays(selectedMonth.year || 2025, 'UA');
+  }, [selectedMonth.year]);
 
   return (
     <CalendarContext.Provider

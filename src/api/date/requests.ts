@@ -12,15 +12,13 @@ export const useGetAvailableCountries = () => {
   return { getAvailableCountries, isLoading, data };
 };
 
-export const useGetPublicHolidays = (year: number, countryCode: string) => {
+export const useGetPublicHolidays = () => {
   const { fetch, isLoading, data } = useFetch<Holiday[]>({
     method: 'GET',
-    url:
-      BASE_URL +
-      '/PublicHolidays/{year}/{countryCode}'
-        .replace('{year}', String(year))
-        .replace('{countryCode}', countryCode),
+    url: BASE_URL + '/PublicHolidays',
   });
-  const getPublicHolidays = () => fetch({});
+
+  const getPublicHolidays = (year: number, countryCode: string) =>
+    fetch({ params: `/${year}/${countryCode}` });
   return { getPublicHolidays, isLoading, data };
 };
